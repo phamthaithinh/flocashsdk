@@ -1,6 +1,8 @@
 package com.flocash.sdk.models;
 
-public class PayerInfo {
+import java.io.Serializable;
+
+public class PayerInfo  implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String address;

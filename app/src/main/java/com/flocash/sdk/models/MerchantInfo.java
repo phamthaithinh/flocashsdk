@@ -1,6 +1,8 @@
 package com.flocash.sdk.models;
 
-public class MerchantInfo {
+import java.io.Serializable;
+
+public class MerchantInfo  implements Serializable {
 	private String urlReturn;
 	private String urlCancel;
 	private String urlLogo;

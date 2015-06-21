@@ -1,6 +1,8 @@
 package com.flocash.sdk.models;
 
-public class PaymentInfo {
+import java.io.Serializable;
+
+public class PaymentInfo  implements Serializable {
 	private String flocashTxn;
 	private String partnerTxn;
 	private String partnerMessage;

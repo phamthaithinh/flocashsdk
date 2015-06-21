@@ -20,6 +20,7 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 import java.math.BigDecimal;
+import java.util.Hashtable;
 
 /**
  * Created by ThaiThinh on 6/13/2015.
@@ -34,12 +35,12 @@ public class FlocashServiceTest {
         OrderInfo order = new OrderInfo();
         PayerInfo payer = new PayerInfo();
         order.setAmount(new BigDecimal("1000.0"));
-        order.setCurrency("NGN");
+        order.setCurrency("KES");
         order.setItem_name("test android");
         order.setItem_price("10");
         order.setOrderId("test123");
         order.setQuantity("1");
-        payer.setCountry("NG");
+        payer.setCountry("KE");
         payer.setFirstName("Thai Thinh");
         payer.setLastName("Pham");
         payer.setEmail("phamthaithinh@gmail.com");
@@ -59,10 +60,17 @@ public class FlocashServiceTest {
                 request.setOrder(new OrderInfo());
                 request.getOrder().setTraceNumber(response.getOrder().getTraceNumber());
                 request.setPayOption(new PaymentMethodInfo());
-                request.getPayOption().setId(response.getPaymentOptions().getCards().get(0).getId());
+                request.getPayOption().setId(response.getPaymentOptions().getMobiles().get(0).getId());
                 response=service.updatePaymentOpion(request);
                 if(response.isSuccess()){
-                    System.out.print(response.getOrder().getStatus());
+                    Hashtable<String,String> params=new Hashtable<>();
+                    params.put("mobile","0986518056");
+                    response=service.updateAdditionField(request.getOrder().getTraceNumber(),params);
+                    if(response.isSuccess()){
+                        System.out.print(response.getOrder().getInstruction());
+                    }else{
+                        System.out.print(response.getErrorMessage());
+                    }
                 }
             }
         } catch (Exception e) {

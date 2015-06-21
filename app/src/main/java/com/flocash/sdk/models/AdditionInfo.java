@@ -1,8 +1,9 @@
 package com.flocash.sdk.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AdditionInfo {
+public class AdditionInfo implements Serializable{
 	private List<CustomField> fields;
 
 	public List<CustomField> getFields() {

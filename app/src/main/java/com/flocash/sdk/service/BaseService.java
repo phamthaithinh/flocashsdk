@@ -76,6 +76,7 @@ public class BaseService {
         HttpClient httpClient = new DefaultHttpClient(myParams);
         HttpPost httpPost = new HttpPost(uri);
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
+        httpPost.setHeader("Authorization", basicAuth);
         for (Map.Entry<String, String> a : parameters.entrySet()) {
             urlParameters.add(new BasicNameValuePair(a.getKey(), a.getValue()));
         }

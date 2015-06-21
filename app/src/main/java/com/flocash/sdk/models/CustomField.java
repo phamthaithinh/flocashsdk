@@ -1,6 +1,8 @@
 package com.flocash.sdk.models;
 
-public class CustomField {
+import java.io.Serializable;
+
+public class CustomField  implements Serializable {
 	public static enum Type {
 		NUMBER, DIGIT, CHAR, DATE
 	}

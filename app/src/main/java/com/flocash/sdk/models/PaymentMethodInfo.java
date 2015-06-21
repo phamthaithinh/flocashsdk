@@ -1,6 +1,8 @@
 package com.flocash.sdk.models;
 
-public class PaymentMethodInfo {
+import java.io.Serializable;
+
+public class PaymentMethodInfo  implements Serializable {
 	private Long id;
 	private String displayName;
 	private String type;

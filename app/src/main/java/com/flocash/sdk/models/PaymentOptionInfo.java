@@ -1,8 +1,9 @@
 package com.flocash.sdk.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PaymentOptionInfo {
+public class PaymentOptionInfo  implements Serializable {
 
 	private List<PaymentMethodInfo> banks;
 	private List<PaymentMethodInfo> cards;

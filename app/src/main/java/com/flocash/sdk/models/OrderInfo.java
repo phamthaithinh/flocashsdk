@@ -1,10 +1,11 @@
 package com.flocash.sdk.models;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashMap;
 
-public class OrderInfo {
+public class OrderInfo  implements Serializable {
 	private BigDecimal amount;
 	private Date orderDate;
 	private String currency;

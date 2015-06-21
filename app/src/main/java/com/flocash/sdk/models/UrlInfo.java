@@ -1,8 +1,9 @@
 package com.flocash.sdk.models;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class UrlInfo {
+public class UrlInfo  implements Serializable {
 	public static enum Method {
 		post, get;
 	}

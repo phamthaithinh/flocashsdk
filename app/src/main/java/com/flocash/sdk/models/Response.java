@@ -1,9 +1,11 @@
 package com.flocash.sdk.models;
 
+import java.io.Serializable;
+
 /**
  * Created by ThaiThinh on 6/13/2015.
  */
-public class Response extends Request {
+public class Response extends Request  implements Serializable {
     private boolean success;
     private String errorCode;
     private String errorMessage;

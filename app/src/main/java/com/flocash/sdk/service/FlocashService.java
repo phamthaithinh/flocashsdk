@@ -40,6 +40,9 @@ public class FlocashService extends BaseService {
                 Response r = gson.fromJson(EntityUtils.toString(entity, "UTF-8"), Response.class);
                 response.setOrder(r.getOrder());
                 response.setPaymentOptions(r.getPaymentOptions());
+            }else{
+                response.setErrorCode(errorCode);
+                response.setErrorMessage(getErrorMsg(httpResponse));
             }
         } catch (IOException e) {
             response.setSuccess(false);
@@ -59,6 +62,9 @@ public class FlocashService extends BaseService {
                 HttpEntity entity = httpResponse.getEntity();
                 Response r = gson.fromJson(EntityUtils.toString(entity, "UTF-8"), Response.class);
                 response.setOrder(r.getOrder());
+            }else{
+                response.setErrorCode(errorCode);
+                response.setErrorMessage(getErrorMsg(httpResponse));
             }
         } catch (IOException e) {
             response.setSuccess(false);
@@ -77,6 +83,9 @@ public class FlocashService extends BaseService {
                 HttpEntity entity = httpResponse.getEntity();
                 Response r = gson.fromJson(EntityUtils.toString(entity, "UTF-8"), Response.class);
                 response.setOrder(r.getOrder());
+            }else{
+                response.setErrorCode(errorCode);
+                response.setErrorMessage(getErrorMsg(httpResponse));
             }
         } catch (IOException e) {
             response.setSuccess(false);
@@ -95,6 +104,9 @@ public class FlocashService extends BaseService {
                 HttpEntity entity = httpResponse.getEntity();
                 Response r = gson.fromJson(EntityUtils.toString(entity, "UTF-8"), Response.class);
                 response.setOrder(r.getOrder());
+            }else{
+                response.setErrorCode(errorCode);
+                response.setErrorMessage(getErrorMsg(httpResponse));
             }
         } catch (IOException e) {
             response.setSuccess(false);
